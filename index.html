@@ -54,6 +54,9 @@
                 <li class="fragment fade-up">Made some rest calls with Postman to figure out how the API worked</li>
             </ul>
         </section>
+        <section data-background-color="#fff">
+            <img src="assets/postman.PNG" alt="">
+        </section>
 
         <section data-background-color="#fff">
             <h1>The tech stack</h1>
@@ -62,26 +65,27 @@
             <img src="assets/electron.png" alt="">
         </section>
         <section data-background-color="#fff">
-            <img src="assets/angular.svg" alt="">
+            <img src="assets/angular.svg" width="450" alt="">
+        </section>
+        <section data-background-color="#fff" data-background-image="assets/angular-material.PNG">
+        </section>
+        <section data-background-color="#fff" data-background-image="assets/angular-material2.PNG">
         </section>
         <section data-background-color="#fff">
+            <h6>Unit testing</h6>
             <img src="assets/unit-tests.jpeg" alt="">
         </section>
         <section data-background-color="#fff">
+            <h6>Unit testing</h6>
             <img src="assets/karma.png" alt="">
         </section>
         <section data-background-color="#fff">
+            <h6>Hot code reloading</h6>
             <img src="assets/hot-reload-36252b9c05984443ea5cd1960bab0f4ca904a6dfbe71165af4ed7f1b1c037124.gif" alt="">
         </section>
         <section>
+            <h6>Hot code reloading</h6>
             <img src="assets/hmr.png" alt="">
-        </section>
-
-        <section>
-            <h2>Process</h2>
-        </section>
-        <section>
-            <img src="assets/agile-lifecycle.png" alt="">
         </section>
 
         <section>
@@ -93,9 +97,169 @@
             </ul>
         </section>
         <section>
-            <img src="assets/Simplicate%20old.png" alt="">
+            <img src="assets/Simplicate%20old.png" height="600" alt="">
+        </section>
+        <section>
+            <pre>
+                <code class="javascript" data-trim contenteditable style="font-size: 18px;">
+                private get authInfo(): { authKey: string, authSecret: string, domain: string } {
+                    return {
+                        authKey: 'SnKKldwtIjjcjwlPqNKplPBXVrfqnyb6',
+                        authSecret: 'LLGWP3gncpqlMB12fChqhJe30kjeIkak',
+                        domain: 'dotcontrol'
+                    };
+                }
+                </code>
+            </pre>
+        </section>
+        <section>
+            <pre>
+                <code class="javascript" data-trim contenteditable style="font-size: 18px;">
+                private get authInfo(): AuthData {
+                    const authStoreString = localStorage.getItem( 'auth' );
+                    if ( authStoreString ) {
+                        return JSON.parse( authStoreString ) as AuthData;
+                    }
+                    return { authentication_key: '', authentication_secret: '', domain: '', employeeId: '' };
+                }
+                </code>
+            </pre>
         </section>
 
+        <section>
+            <h2>Building a prototype</h2>
+            <ul>
+                <li>login screen</li>
+                <li>Change days</li>
+                <li>Edit content of items</li>
+            </ul>
+        </section>
+        <section>
+            <img src="assets/Old%20design.png" height="600" alt="">
+        </section>
+
+        <section>
+            <h2>Adding a cool design</h2>
+            <img src="assets/Main%20Screen.jpg" height="600" alt="">
+        </section>
+
+        <section>
+            <h2>Continuous improvements</h2>
+            <ul>
+                <li class="fragment fade-up">Event tracking</li>
+                <li class="fragment fade-up">User testing</li>
+                <li class="fragment fade-up">User feedback</li>
+            </ul>
+        </section>
+        <section>
+            <img src="assets/pasted%20image%200.png" height="600" alt="">
+        </section>
+        <section data-background-image="assets/Travis-CI-Feature-Image.jpg">
+        </section>
+        <section>
+            <h2>Travis CI</h2>
+            <ul>
+                <li class="fragment fade-up">Free CICD (for open source projects)</li>
+                <li class="fragment fade-up">Test code on dev branch</li>
+                <li class="fragment fade-up">Master branch is release</li>
+            </ul>
+        </section>
+        <section>
+            <img src="assets/travis_pipeline.png" alt="">
+        </section>
+
+        <section>
+            <pre>
+                <code class="haml" data-trim contenteditable style="font-size: 18px;">
+                language: node_js
+                node_js:
+                - 8
+
+                sudo: required
+
+                os:
+                - osx
+
+                addons:
+                  chrome: stable
+
+                before_script:
+                - export DISPLAY=:99.0
+
+                install:
+                - npm install
+
+                jobs:
+                  include:
+                  - stage: test + build
+                    if: branch != master
+                    script:
+                    - npm run test
+                    - ng lint
+                    - npm run build:prod
+                  - stage: build + deploy osx
+                    if: branch = master
+                    os:
+                    - osx
+                    script:
+                    - npm run electron:mac
+                    deploy:
+                      provider: releases
+                      skip_cleanup: true
+                      api_key:
+                        secure: nHpK13Hy+CquZ6rMiQ5uKsCnvcK1l/elPU1WLLQP79LWhsQV24kyd6JT0Y6qq4V+s4dZQxPZ0wWIYIqByweCLhqzvE9RlPyxp2Vz3l7lFGX79a9Pb+6Y1sEY8dCe/Mj2BJKz3EoK5guYxYYAK/TmBIDxRYhvrZagPM9QONSOf7tovMAanBVSb/FazvIhTziV2ptep6sd24MbqWK4Ccw7Imj4KOv/4FJzwgtVnaT0LQFG9C2CJlTplcmPkelGilrGHKLdo5YpIekzEkioI2S43CI60VBffUhmOUEMWIFURt9v/Kphs1QigKBAL7pjjoprSkJ0ZAdXUJSoYWEjLDo8jUfN2y3dXRHHaVYyZDSdIxyZvmZmNutgg0D08au1nlPvkVNiLQ5nlDr0NPXWeX3XwgYwyBihJfeS7K1ZiIvCFvi96ln2BOpZEXl4xMJMQpMFQtqBObKaTUZptirULOGumLRWp7msTx/fLBLNrvHA6VJDJ/D29sX5RXIFZL1NMjLRiKIBuw8GW1caKtj+Jz6zs67M6R3KxiXVTH12sJEgMdVBSwvB2AqlaSxFL8ha6wbQTrXbyeltqdz1fqcmaWTr6M7LpZCk0sCKfXqL+ypFEEam3xqhzE/oNtVKWhoHoZ5EIvEIdQ9qj24oMFeUYsMIEUxQu0nTfgp4s7274bWeJ6s=
+                      file-glob: true
+                      file: "release/*.dmg"
+                      on:
+                        tags: false
+                  - stage: build + deploy win
+                    if: branch = master
+                    os:
+                    - windows
+                    script: npm run electron:windows
+                    deploy:
+                      provider: releases
+                      skip_cleanup: true
+                      api_key:
+                        secure: nHpK13Hy+CquZ6rMiQ5uKsCnvcK1l/elPU1WLLQP79LWhsQV24kyd6JT0Y6qq4V+s4dZQxPZ0wWIYIqByweCLhqzvE9RlPyxp2Vz3l7lFGX79a9Pb+6Y1sEY8dCe/Mj2BJKz3EoK5guYxYYAK/TmBIDxRYhvrZagPM9QONSOf7tovMAanBVSb/FazvIhTziV2ptep6sd24MbqWK4Ccw7Imj4KOv/4FJzwgtVnaT0LQFG9C2CJlTplcmPkelGilrGHKLdo5YpIekzEkioI2S43CI60VBffUhmOUEMWIFURt9v/Kphs1QigKBAL7pjjoprSkJ0ZAdXUJSoYWEjLDo8jUfN2y3dXRHHaVYyZDSdIxyZvmZmNutgg0D08au1nlPvkVNiLQ5nlDr0NPXWeX3XwgYwyBihJfeS7K1ZiIvCFvi96ln2BOpZEXl4xMJMQpMFQtqBObKaTUZptirULOGumLRWp7msTx/fLBLNrvHA6VJDJ/D29sX5RXIFZL1NMjLRiKIBuw8GW1caKtj+Jz6zs67M6R3KxiXVTH12sJEgMdVBSwvB2AqlaSxFL8ha6wbQTrXbyeltqdz1fqcmaWTr6M7LpZCk0sCKfXqL+ypFEEam3xqhzE/oNtVKWhoHoZ5EIvEIdQ9qj24oMFeUYsMIEUxQu0nTfgp4s7274bWeJ6s=
+                      file-glob: true
+                      file: "release/*.exe"
+                      on:
+                        tags: false
+
+                </code>
+            </pre>
+        </section>
+        <section>
+            <h2>Next steps</h2>
+            <ul>
+                <li class="fragment fade-up">Onboarding</li>
+                <li class="fragment fade-up">Week overview</li>
+                <li class="fragment fade-up">Process feedback</li>
+            </ul>
+        </section>
+
+        <section>
+            <img src="assets/Login%20screen.jpg" height="600" alt="">
+        </section>
+
+        <section>
+            <img src="assets/Main%20Screen%20Empty%20state.jpg" height="600" alt="">
+        </section>
+
+        <section>
+            <img src="assets/Main%20Screen%20Week%20overview.jpg" height="600" alt="">
+        </section>
+
+        <section>
+            <img src="assets/Main%20Screen.jpg" height="600" alt="">
+        </section>
+
+        <section>
+            <a href="https://github.com/tomreinartz90/simplicate-app/releases">
+                https://github.com/tomreinartz90/simplicate-app/releases
+            </a>
+        </section>
 
     </div>
 </div>
