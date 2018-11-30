@@ -1,49 +1,129 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+    <title>reveal.js</title>
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css">
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section data-background-color="#fff" style="padding: 4rem;">
+            <img src="assets/logo-dc.png" width="250px" style="box-shadow: none" alt="">
+            <h6 style="margin-top: 6rem">Building a Simplicate Tracker</h6>
+        </section>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+        <section data-background-color="#fff">
+            <h1>Why?!</h1>
+            <p class="fragment fade-up">The current solution did not meet the requirement</p>
+        </section>
+        <section>
+            <img src="assets/jira%20time%20tracking.png" alt="">
+        </section>
+        <section>
+            <img src="assets/harvest-app.jpg" alt="">
+        </section>
+        <section>
+            <img src="assets/simplicate%20app.PNG" alt="">
+        </section>
+        <section>
+            <img src="assets/Simplicate-Mobiele-app-Simplicate-1.png" alt="">
+        </section>
 
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
-			});
-		</script>
-	</body>
+        <section data-background-color="#fff">
+            <h1>How</h1>
+            <ul>
+                <li class="fragment fade-up">Researched findings of other people to determine the gaps of this new tool.</li>
+                <li class="fragment fade-up">Reverse engineered the Chrome extensions</li>
+                <li class="fragment fade-up">Made some rest calls with Postman to figure out how the API worked</li>
+            </ul>
+        </section>
+
+        <section data-background-color="#fff">
+            <h1>The tech stack</h1>
+        </section>
+        <section data-background-color="#fff">
+            <img src="assets/electron.png" alt="">
+        </section>
+        <section data-background-color="#fff">
+            <img src="assets/angular.svg" alt="">
+        </section>
+        <section data-background-color="#fff">
+            <img src="assets/unit-tests.jpeg" alt="">
+        </section>
+        <section data-background-color="#fff">
+            <img src="assets/karma.png" alt="">
+        </section>
+        <section data-background-color="#fff">
+            <img src="assets/hot-reload-36252b9c05984443ea5cd1960bab0f4ca904a6dfbe71165af4ed7f1b1c037124.gif" alt="">
+        </section>
+        <section>
+            <img src="assets/hmr.png" alt="">
+        </section>
+
+        <section>
+            <h2>Process</h2>
+        </section>
+        <section>
+            <img src="assets/agile-lifecycle.png" alt="">
+        </section>
+
+        <section>
+            <h2>Building an mvp</h2>
+            <ul>
+                <li>Hardcoded auth info</li>
+                <li>Overview of current day</li>
+                <li>Track hours for the current day</li>
+            </ul>
+        </section>
+        <section>
+            <img src="assets/Simplicate%20old.png" alt="">
+        </section>
+
+
+    </div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+  // More info about config & dependencies:
+  // - https://github.com/hakimel/reveal.js#configuration
+  // - https://github.com/hakimel/reveal.js#dependencies
+  Reveal.initialize({
+    dependencies: [
+      { src: 'plugin/markdown/marked.js' },
+      { src: 'plugin/markdown/markdown.js' },
+      {
+        src: 'plugin/notes/notes.js',
+        async: true,
+      },
+      {
+        src: 'plugin/highlight/highlight.js',
+        async: true,
+        callback: function () {
+          hljs.initHighlightingOnLoad();
+        },
+      },
+    ],
+  });
+</script>
+</body>
 </html>
